@@ -1,7 +1,7 @@
 Boilermaker
 =======
 
-Boilermaker makes it easy to create a Pod scaffold for [BipIO](https://bip.io) for further tweaking.
+Boilermaker makes it easy to create a Pod boilerplate for [BipIO](https://bip.io) and add new actions.
 
 ## License
 
