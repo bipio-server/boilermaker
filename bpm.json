@@ -2,6 +2,8 @@
 
 //        BipIO Pod Manifest Definition v0.1
 
+// ## General Config
+// Defines general information about this Pod
 {
   // __Name__ (_string_) alphanumeric, lowercase object key (unique key)
   "name" : "pod_name",
@@ -15,7 +17,7 @@
   // __Provider URL__ (_string_, optional) URL to service provider
   "url" : "Provider URL",
 
-  // __Config__ (_object_) anything here is persisted to server config (default.json)
+  // __Config__ (_object_) anything here is persisted to server config (default.json) when the pod is installed
   "config" : {
     "example_stored_key" : "value",
 
@@ -25,6 +27,10 @@
       "clientSecret" : "oauth client secret"
     }
   },
+
+  // ## Authentication
+  // The Authentication block describes how users should authenticate setup of their channels, and
+  // what credentials to use when channels are invoked
 
   // __Auth Strategy__ (_object_, optional) user authentication strategy
   "auth" : {
@@ -45,6 +51,9 @@
     }
   },
 
+  // ## Renderers
+  // Renderers are RPC's which are passed through by BipIO which the pod can handle
+
   // __Renderers__ (_object_, optional) RPC's implemented by this pod
   "renderers" : {
     // __Key__ (_object_)
@@ -57,6 +66,11 @@
       "contentType" : "application/json"
     }
   },
+
+  // ## Actions
+  // Actions are individual methods supplied by the provider API.  When a channel is created,
+  // it points to `pod_name.action`
+
   // __Actions__ (_object_) Implemented Action Schemas
   "actions" : {
       // __Action Key__ (_object_) Action Schema
@@ -67,8 +81,13 @@
         // __Description__ (_string_) extended description
         "description":"Action 1 does some great thing",
 
-        // __Trigger__ (_string_, default `false`) Action is a trigger which tracks and generates its own content
+        // __Trigger__ (_string_, default `false`) Action is a trigger which tracks and generates its own content.
+        // Actions marked as triggers are content generators for triggered bips
         "trigger" : false,
+
+        // #### Configuration
+        // config items make immutable attributes available, or provide sane defaults
+        // in the case of an import not existing
 
         // __Config__ (_object_, optional) Channel Configuration Schema - channel defaults.
         // Variant of <a href="http://json-schema.org/">JSON Schema</a> where `properties`
@@ -96,7 +115,10 @@
            ]
         },
 
-        // __Imports__ (_object_, optional) Data Imports Schema. Defines the data structure this action _expects_
+        // #### Imports
+        // Imports define the data structure this action _expects_
+
+        // __Imports__ (_object_, optional) Data Imports Schema.
         // Variant of <a href="http://json-schema.org/">JSON Schema</a> where `properties`
         // is an array rather than an object.
         "imports" : {
@@ -120,7 +142,10 @@
            ]
         },
 
-        // __Exports__ (_object_, optional) Data Exports Schema. Defines the data structure this action _produces_.
+        // #### Exports
+        // Exports define the data structure this action _produces_
+
+        // __Exports__ (_object_, optional) Data Exports Schema.
         // Variant of <a href="http://json-schema.org/">JSON Schema</a> where `properties`
         // is an array rather than an object.
         "exports" : {
@@ -139,6 +164,8 @@
               }
             ]
         },
+
+        // #### Action Renderers
 
         // __Renderers__ (_object_, optional) RPC's implemented by this __Action__
         "renderers" : {
