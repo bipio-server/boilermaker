@@ -1,0 +1,157 @@
+// (c) WoT.IO inc (2014)
+
+//        BipIO Pod Manifest Definition v0.1
+
+{
+  // __Name__ (_string_) alphanumeric, lowercase object key (unique key)
+  "name" : "pod_name",
+
+  // __Title/Label__ (_string_) is the short, human readable version of `name`
+  "title" : "Pod Name",
+
+  // __Useful Description__ (_string_) is the description used when generating UI and supporting documentation
+  "description" : "For doing X-Y-Z",
+
+  // __Provider URL__ (_string_, optional) URL to service provider
+  "url" : "Provider URL",
+
+  // __Config__ (_object_) anything here is persisted to server config (default.json)
+  "config" : {
+    "example_stored_key" : "value",
+
+    // __OAuth Config__ (_object_) if your pod uses oAuth, store the <a href="http://passportjs.org/">node-passport</a> strategy configs here.
+    "oauth" : {
+      "clientID" : "oauth client id",
+      "clientSecret" : "oauth client secret"
+    }
+  },
+
+  // __Auth Strategy__ (_object_, optional) user authentication strategy
+  "auth" : {
+
+    // __Strategy Name__ (_string_) `oauth` or `issuer_token`
+    "strategy" : "oauth",
+
+    // __Passport Strategy Name__ (_string_) when `strategy : oauth`, supply the name of the <a href="http://passportjs.org/">node-passport</a> strategy here
+    "passportStrategy" : "google",
+
+    // __Auth Map__ (_object_, optional) when `strategy : issuer_token`, `authMap` maps internal attributes to how it is described by the pod provider.
+    // For example, HipChat needs an access token, so `authMap` contains `password : 'API Access Token'`.
+    // __Note__ Its up to pods to implement this mapping
+    "authMap" : {
+      "username" : "User Name Label",
+      "password" : "API Key",
+      "key" : "Private Key"
+    }
+  },
+
+  // __Renderers__ (_object_, optional) RPC's implemented by this pod
+  "renderers" : {
+    // __Key__ (_object_)
+    "do_something" : {
+      // __Title/Label__ (_string_) Short, human readable renderer label
+      "title" : "Do Something",
+      // __Description__ (_string_) extended description
+      "description" : "This is what it does",
+      // __Content Type__ (_string_) expected response mime type
+      "contentType" : "application/json"
+    }
+  },
+  // __Actions__ (_object_) Implemented Action Schemas
+  "actions" : {
+      // __Action Key__ (_object_) Action Schema
+      "action_1" : {
+        // __Title/Label__ (_string_) Short, human readable action label
+        "title" : "Action 1",
+
+        // __Description__ (_string_) extended description
+        "description":"Action 1 does some great thing",
+
+        // __Trigger__ (_string_, default `false`) Action is a trigger which tracks and generates its own content
+        "trigger" : false,
+
+        // __Config__ (_object_, optional) Channel Configuration Schema - channel defaults.
+        // Variant of <a href="http://json-schema.org/">JSON Schema</a> where `properties`
+        // is an array rather than an object.
+        "config" : {
+            // __Properties__ (_array_, optional) in order list of property objects, where required fields
+            // are first, then optional properties, then most optional properties
+            "properties": [
+              {
+                // __Type__ (_string_) Property type, string|text|object|array|number|boolean
+                "type" : "string",
+                // __Name__ (_string_) Human Readable Name
+                "name" : "rcpt_to",
+                // __Title/Label__ (_string_) Short, human readable action label
+                "title" : "Email Address",
+                // __Description__ (_string_) extended description
+                "description" : "(eg : foo@bar.com)",
+                // __Default__ (_mixed_) default value
+                "default" : "Some Sane Default"
+              }
+            ],
+            // __Required Fields__ (_array_, optional) list of required property `name`
+            "required": [
+              "rcpt_to"
+           ]
+        },
+
+        // __Imports__ (_object_, optional) Data Imports Schema. Defines the data structure this action _expects_
+        // Variant of <a href="http://json-schema.org/">JSON Schema</a> where `properties`
+        // is an array rather than an object.
+        "imports" : {
+            // __Properties__ (_array_, optional) in order list of property objects, where required fields
+            // are first, then optional properties, then most optional properties
+            "properties": [
+              {
+                // __Type__ (_string_) Property type, string|text|object|array|number|boolean
+                "type" : "string",
+                // __Name__ (_string_) Human Readable Name
+                "name" : "message_id",
+                // __Title/Label__ (_string_) Short, human readable action label
+                "title" : "Message ID",
+                // __Description__ (_string_) extended description
+                "description" : "abc-123"
+              }
+            ],
+            // __Required Fields__ (_array_, optional) list of required property `name`
+            "required": [
+              "rcpt_to"
+           ]
+        },
+
+        // __Exports__ (_object_, optional) Data Exports Schema. Defines the data structure this action _produces_.
+        // Variant of <a href="http://json-schema.org/">JSON Schema</a> where `properties`
+        // is an array rather than an object.
+        "exports" : {
+            // __Properties__ (_array_, optional) in order list of property objects, where required fields
+            // are first, then optional properties, then most optional properties
+            "properties": [
+              {
+                // __Type__ (_string_) Property type, string|text|object|array|number|boolean
+                "type" : "string",
+                // __Name__ (_string_) Human Readable Name
+                "name" : "message_id",
+                // __Title/Label__ (_string_) Short, human readable action label
+                "title" : "Message ID",
+                // __Description__ (_string_) extended description
+                "description" : "abc-123"
+              }
+            ]
+        },
+
+        // __Renderers__ (_object_, optional) RPC's implemented by this __Action__
+        "renderers" : {
+          // __Key__ (_object_)
+          "do_some_action" : {
+            // __Title/Label__ (_string_) Short, human readable renderer label
+            "title" : "Do Something",
+            // __Description__ (_string_) extended description
+            "description" : "This is what it does",
+            // __Content Type__ (_string_) expected response mime type
+            "contentType" : "application/json"
+          }
+        }
+     }
+  }
+}
