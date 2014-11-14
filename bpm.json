@@ -1,9 +1,8 @@
 // (c) WoT.IO inc (2014)
 // ### About
 //        BipIO Pod Manifest Definition v0.1 (draft)
-// The bpm.json file describes how to assemble a Pod boilerplate programatically
+// The `bpm.json` file describes how to assemble a Pod boilerplate programatically
 // and an authoritative schema from which different views can be surfaced.
-
 
 // ### General Config
 // Defines general information about this Pod
@@ -11,7 +10,7 @@
   // __Name__ (_string_) alphanumeric, lowercase object key (unique key)
   "name" : "pod_name",
 
-  // __Title/Label__ (_string_) is the short, human readable version of `name`
+  // __Title__ (_string_) is the short, human readable version of `name`
   "title" : "Pod Name",
 
   // __Useful Description__ (_string_) is the description used when generating UI and supporting documentation
@@ -20,7 +19,13 @@
   // __Provider URL__ (_string_, optional) URL to service provider
   "url" : "Provider URL",
 
-  // __Config__ (_object_) anything here is persisted to server config (default.json) when the pod is installed
+  // __Track Duplicates__ (_boolean_, optional default `false`) Pod requires a de-duplication resource
+  "trackDuplicates" : true,
+
+  // __Data Sources__ (_array_, optional) Array of model objects which should be bound to a DAO resource
+  "dataSources" : [ { "id" : { "type" : "string" } } ],
+
+  // __Config__ (_object_) anything here is persisted to server config (`default.json`) when the pod is installed
   "config" : {
     "example_stored_key" : "value",
 
@@ -30,6 +35,7 @@
       "clientSecret" : "oauth client secret"
     }
   },
+
   // ### Authentication
   // The Authentication block describes how users should authenticate setup of their channels, and
   // what credentials to use when channels are invoked
@@ -58,9 +64,9 @@
 
   // __Renderers__ (_object_, optional) RPC's implemented by this pod
   "renderers" : {
-    // __Key__ (_object_) eg: `/rpc/pod/:pod_name/:rpc_name`
+    // __Key__ (_object_) Renderer key, becomes the URI eg:  `/rpc/pod/:pod_name/:rpc_name`
     "rpc_name" : {
-      // __Title/Label__ (_string_) Short, human readable renderer label
+      // __Title__ (_string_) Short, human readable renderer label
       "title" : "Do Something",
       // __Description__ (_string_) extended description
       "description" : "This is what it does",
@@ -77,7 +83,7 @@
   "actions" : {
       // __Action Key__ (_object_) Action Schema
       "action_1" : {
-        // __Title/Label__ (_string_) Short, human readable action label
+        // __Title__ (_string_) Short, human readable action label
         "title" : "Action 1",
 
         // __Description__ (_string_) extended description
@@ -103,7 +109,7 @@
                 "type" : "string",
                 // __Name__ (_string_) Human Readable Name
                 "name" : "rcpt_to",
-                // __Title/Label__ (_string_) Short, human readable action label
+                // __Title__ (_string_) Short, human readable action label
                 "title" : "Email Address",
                 // __Description__ (_string_) extended description
                 "description" : "(eg : foo@bar.com)",
@@ -132,7 +138,7 @@
                 "type" : "string",
                 // __Name__ (_string_) property id
                 "name" : "message_id",
-                // __Title/Label__ (_string_) Short, human readable action label
+                // __Title__ (_string_) Short, human readable action label
                 "title" : "Message ID",
                 // __Description__ (_string_) extended description
                 "description" : "abc-123"
@@ -150,14 +156,14 @@
         // __Exports__ (_object_, optional) Data Exports Schema.
         // Expects <a href="http://json-schema.org/">JSON Schema</a>
         "exports" : {
-            // __Properties__ (_object_, optional) property object
+            // __Properties__ (_object_, optional) JSON-Schema Properties Object
             "properties": {
               // __Name__ (_string_) property id
               "message_id" : {
                 // __Type__ (_string_) Property type, string|text|object|array|number|boolean
                 "type" : "string",
 
-                // __Title/Label__ (_string_) Short, human readable action label
+                // __Title__ (_string_) Short, human readable action label
                 "title" : "Message ID",
                 // __Description__ (_string_) extended description
                 "description" : "abc-123"
@@ -168,9 +174,9 @@
         // #### Action Renderers
         // __Renderers__ (_object_, optional) RPC's implemented by this __Action__
         "renderers" : {
-          // __Key__ (_object_) eg: `/rpc/channel/:channel_id/:action_rpc_name`
+          // __Key__ (_object_) Renderer key, becomes the URI eg: `/rpc/channel/:channel_id/:action_rpc_name`
           "action_rpc_name" : {
-            // __Title/Label__ (_string_) Short, human readable renderer label
+            // __Title__ (_string_) Short, human readable renderer label
             "title" : "Do Something",
             // __Description__ (_string_) extended description
             "description" : "This is what it does",
