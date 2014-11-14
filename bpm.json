@@ -150,11 +150,11 @@
         "exports" : {
             // __Properties__ (_object_, optional) property object
             "properties": {
+              // __Name__ (_string_) property id
               "message_id" : {
                 // __Type__ (_string_) Property type, string|text|object|array|number|boolean
                 "type" : "string",
-                // __Name__ (_string_) property id
-                "name" : "message_id",
+
                 // __Title/Label__ (_string_) Short, human readable action label
                 "title" : "Message ID",
                 // __Description__ (_string_) extended description
