@@ -128,7 +128,7 @@
               {
                 // __Type__ (_string_) Property type, string|text|object|array|number|boolean
                 "type" : "string",
-                // __Name__ (_string_) Human Readable Name
+                // __Name__ (_string_) property id
                 "name" : "message_id",
                 // __Title/Label__ (_string_) Short, human readable action label
                 "title" : "Message ID",
@@ -155,7 +155,7 @@
               {
                 // __Type__ (_string_) Property type, string|text|object|array|number|boolean
                 "type" : "string",
-                // __Name__ (_string_) Human Readable Name
+                // __Name__ (_string_) property id
                 "name" : "message_id",
                 // __Title/Label__ (_string_) Short, human readable action label
                 "title" : "Message ID",
