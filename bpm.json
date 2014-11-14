@@ -1,8 +1,11 @@
 // (c) WoT.IO inc (2014)
-
+// ### About
 //        BipIO Pod Manifest Definition v0.1 (draft)
+// The bpm.json file describes how to assemble a Pod boilerplate programatically
+// and an authoritative schema from which different views can be surfaced.
 
-// ## General Config
+
+// ### General Config
 // Defines general information about this Pod
 {
   // __Name__ (_string_) alphanumeric, lowercase object key (unique key)
@@ -27,8 +30,7 @@
       "clientSecret" : "oauth client secret"
     }
   },
-
-  // ## Authentication
+  // ### Authentication
   // The Authentication block describes how users should authenticate setup of their channels, and
   // what credentials to use when channels are invoked
 
@@ -51,13 +53,13 @@
     }
   },
 
-  // ## Renderers
-  // Renderers are RPC's which are passed through by BipIO which the pod can handle
+  // ### Renderers
+  // Renderers RPC's passsed through by BipIO
 
   // __Renderers__ (_object_, optional) RPC's implemented by this pod
   "renderers" : {
-    // __Key__ (_object_)
-    "do_something" : {
+    // __Key__ (_object_) eg: `/rpc/pod/:pod_name/:rpc_name`
+    "rpc_name" : {
       // __Title/Label__ (_string_) Short, human readable renderer label
       "title" : "Do Something",
       // __Description__ (_string_) extended description
@@ -67,7 +69,7 @@
     }
   },
 
-  // ## Actions
+  // ### Actions
   // Actions are individual methods supplied by the provider API.  When a channel is created,
   // it points to `pod_name.action`
 
@@ -164,11 +166,10 @@
         },
 
         // #### Action Renderers
-
         // __Renderers__ (_object_, optional) RPC's implemented by this __Action__
         "renderers" : {
-          // __Key__ (_object_)
-          "do_some_action" : {
+          // __Key__ (_object_) eg: `/rpc/channel/:channel_id/:action_rpc_name`
+          "action_rpc_name" : {
             // __Title/Label__ (_string_) Short, human readable renderer label
             "title" : "Do Something",
             // __Description__ (_string_) extended description
