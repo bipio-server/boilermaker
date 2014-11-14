@@ -23,7 +23,16 @@
   "trackDuplicates" : true,
 
   // __Data Sources__ (_array_, optional) Array of model objects which should be bound to a DAO resource
-  "dataSources" : [ { "id" : { "type" : "string" } } ],
+  "dataSources" : [
+    {
+      "entityName" : "my_model",
+      "schema" : {
+        "id" : {
+          "type" : "string"
+        }
+      }
+    }
+  ],
 
   // __Config__ (_object_) anything here is persisted to server config (`default.json`) when the pod is installed
   "config" : {

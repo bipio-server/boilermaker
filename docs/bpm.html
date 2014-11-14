@@ -139,7 +139,16 @@ and an authoritative schema from which different views can be surfaced.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="hljs-string">"dataSources"</span> : [ { <span class="hljs-string">"id"</span> : { <span class="hljs-string">"type"</span> : <span class="hljs-string">"string"</span> } } ],</pre></div></div>
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-string">"dataSources"</span> : [
+    {
+      <span class="hljs-string">"entityName"</span> : <span class="hljs-string">"my_model"</span>,
+      <span class="hljs-string">"schema"</span> : {
+        <span class="hljs-string">"id"</span> : {
+          <span class="hljs-string">"type"</span> : <span class="hljs-string">"string"</span>
+        }
+      }
+    }
+  ],</pre></div></div>
             
         </li>
         
