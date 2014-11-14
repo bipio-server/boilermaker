@@ -715,8 +715,7 @@ are first, then optional properties, then most optional properties</p>
                 <a class="pilcrow" href="#section-45">&#182;</a>
               </div>
               <p><strong>Exports</strong> (<em>object</em>, optional) Data Exports Schema.
-Variant of <a href="http://json-schema.org/">JSON Schema</a> where <code>properties</code>
-is an array rather than an object.</p>
+Expects <a href="http://json-schema.org/">JSON Schema</a></p>
 
             </div>
             
@@ -731,13 +730,12 @@ is an array rather than an object.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-46">&#182;</a>
               </div>
-              <p><strong>Properties</strong> (<em>array</em>, optional) in order list of property objects, where required fields
-are first, then optional properties, then most optional properties</p>
+              <p><strong>Properties</strong> (<em>object</em>, optional) property object</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>            <span class="hljs-string">"properties"</span>: [
-              {</pre></div></div>
+            <div class="content"><div class='highlight'><pre>            <span class="hljs-string">"properties"</span>: {
+              <span class="hljs-string">"message_id"</span> : {</pre></div></div>
             
         </li>
         
@@ -799,7 +797,7 @@ are first, then optional properties, then most optional properties</p>
             
             <div class="content"><div class='highlight'><pre>                <span class="hljs-string">"description"</span> : <span class="hljs-string">"abc-123"</span>
               }
-            ]
+            }
         },</pre></div></div>
             
         </li>
