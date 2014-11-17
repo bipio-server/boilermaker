@@ -72,7 +72,8 @@
     }
   },
 
-  // ### RPC's
+  // ### Remote Procedure Calls
+
   // __RPC's__ (_object_, optional) <a target="_blank" href="http://en.wikipedia.org/wiki/Remote_procedure_call">RPC's</a> implemented by this _Pod_
   "rpcs" : {
     // __Key__ (_object_) Renderer key, becomes the URI eg:  `/rpc/pod/:pod_name/:rpc_name`
@@ -193,7 +194,8 @@
           }
         },
 
-        // #### RPC
+        // ### Remote Procedure Calls
+
         // __RPC's__ (_object_, optional) <a target="_blank" href="http://en.wikipedia.org/wiki/Remote_procedure_call">RPC's</a> implemented by this _Action_
         "rpcs" : {
           // __Key__ (_object_) Renderer key, becomes the URI eg: `/rpc/channel/:channel_id/:action_rpc_name`
