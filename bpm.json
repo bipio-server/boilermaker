@@ -103,6 +103,10 @@
         // __Description__ (_string_) extended description
         "description":"Action Name does some great thing",
 
+        // __Reference Documentation__ (_string_) Provider Reference Documentation URL.
+        // should point to the authoritative documentation this action attempts to encapsulate.
+        "provider_ref" : "http://example.org/docs/#action_name",
+
         // __Trigger__ (_string_, optional) one of `invoke|poll|realtime`.
         // * `invoke` - (default) must be explicitly invoked
         // * `poll` - should be periodically polled with system scheduler
