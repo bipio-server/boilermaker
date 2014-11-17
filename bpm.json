@@ -56,7 +56,10 @@
   // __Auth Strategy__ (_object_, optional) user authentication strategy
   "auth" : {
 
-    // __Strategy Name__ (_string_) `oauth` or `issuer_token`
+    // __Strategy__ (_string_) one of :
+    // * `none` (default) no authentication required
+    // * `oauth` User must negotiate oAuth credentials
+    // * `issuer_token` User must supply authentication tokens
     "strategy" : "oauth",
 
     // __Passport Strategy Name__ (_string_) when `strategy : oauth`, supply the name of the <a href="http://passportjs.org/">node-passport</a> strategy here

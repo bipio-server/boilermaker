@@ -267,7 +267,12 @@ what credentials to use when channels are invoked</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-16">&#182;</a>
               </div>
-              <p><strong>Strategy Name</strong> (<em>string</em>) <code>oauth</code> or <code>issuer_token</code></p>
+              <p><strong>Strategy</strong> (<em>string</em>) one of :</p>
+<ul>
+<li><code>none</code> (default) no authentication required</li>
+<li><code>oauth</code> User must negotiate oAuth credentials</li>
+<li><code>issuer_token</code> User must supply authentication tokens</li>
+</ul>
 
             </div>
             
