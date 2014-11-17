@@ -22,17 +22,21 @@
   // __Track Duplicates__ (_boolean_, optional default `false`) Pod requires a de-duplication resource
   "trackDuplicates" : true,
 
-  // __Data Sources__ (_array_, optional) Array of model objects which should be bound to a DAO resource
-  "dataSources" : [
-    {
-      "entityName" : "my_model",
-      "schema" : {
+  // __Data Sources__ (_object_, optional) Model objects which should be bound to a DAO resource,
+  // keyed by the name of the action.
+  "dataSources" : {
+    // __Model__ (_object_) Model Object, keyed by the name of the model.
+    "my_model" : {
+      // Expects <a href="http://json-schema.org/">JSON Schema</a>
+      "properties" : {
         "id" : {
           "type" : "string"
         }
-      }
+      },
+      // __Keys__  (_array_) Unique Key (all keys in array create a compound key
+      "keys" : [ "id" ]
     }
-  ],
+  },
 
   // __Config__ (_object_) anything here is persisted to server config (`default.json`) when the pod is installed
   "config" : {
