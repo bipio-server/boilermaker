@@ -128,7 +128,7 @@
             "required": [
               "rcpt_to"
            ],
-           // __Disposition__ (_array_, optional) in order list of property names, where required fields
+           // __Disposition__ (_array_) ordered list of property names, where required fields
            // are first, then optional properties, then most optional properties
            "disposition" : [
             "rcpt_to"
@@ -158,8 +158,8 @@
             "required": [
               "rcpt_to"
            ],
-           // __Disposition__ (_array_, optional) in order list of property names, where required fields
-           // are first, then optional properties, then most optional properties
+           // __Disposition__ (_array_) ordered list of property names, where required fields
+           // are first, then optional properties, then most optional properties.
            "disposition" : [
             "rcpt_to"
            ]
