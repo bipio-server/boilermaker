@@ -2,7 +2,7 @@
 // ### About
 //        BipIO Pod Manifest Definition v0.1 (draft)
 // The `bpm.json` file describes how to assemble a Pod boilerplate programatically
-// and an authoritative schema from which different views can be surfaced.
+// and is an authoritative schema from which different views can be surfaced.
 
 // ### General Config
 // Defines general information about this Pod
