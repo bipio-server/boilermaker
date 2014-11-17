@@ -397,7 +397,8 @@ it points to <code>pod_name.action_name</code></p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-24">&#182;</a>
               </div>
-              <p><strong>Action Key</strong> (<em>object</em>) Action Schema, keyed by the name of the action</p>
+              <p><strong>Action Key</strong> (<em>object</em>) Action Schema, keyed by the name of the action.
+action implementation will be written to <code>./{action_name}.js</code> for this pod</p>
 
             </div>
             
@@ -442,8 +443,7 @@ it points to <code>pod_name.action_name</code></p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-27">&#182;</a>
               </div>
-              <p><strong>Trigger</strong> (<em>string</em>, optional) one of <code>invoke|poll|realtime</code>. Where not <code>none</code>, this
-action is a trigger which tracks and generates its own content (via triggering bips).</p>
+              <p><strong>Trigger</strong> (<em>string</em>, optional) one of <code>invoke|poll|realtime</code>.</p>
 <ul>
 <li><code>invoke</code> - (default) must be explicitly invoked</li>
 <li><code>poll</code> - should be periodically polled with system scheduler</li>
@@ -452,7 +452,7 @@ action is a trigger which tracks and generates its own content (via triggering b
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-string">"trigger"</span> : <span class="hljs-string">"poll"</span>,</pre></div></div>
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-string">"trigger"</span> : <span class="hljs-string">"invoke"</span>,</pre></div></div>
             
         </li>
         

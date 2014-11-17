@@ -90,7 +90,8 @@
 
   // __Actions__ (_object_) Implemented Action Schemas
   "actions" : {
-      // __Action Key__ (_object_) Action Schema, keyed by the name of the action
+      // __Action Key__ (_object_) Action Schema, keyed by the name of the action.
+      // action implementation will be written to `./{action_name}.js` for this pod
       "action_name" : {
         // __Title__ (_string_) Short, human readable action name
         "title" : "Action Name",
@@ -98,12 +99,11 @@
         // __Description__ (_string_) extended description
         "description":"Action Name does some great thing",
 
-        // __Trigger__ (_string_, optional) one of `invoke|poll|realtime`. Where not `none`, this
-        // action is a trigger which tracks and generates its own content (via triggering bips).
+        // __Trigger__ (_string_, optional) one of `invoke|poll|realtime`.
         // * `invoke` - (default) must be explicitly invoked
         // * `poll` - should be periodically polled with system scheduler
         // * `realtime` - self managed
-        "trigger" : "poll",
+        "trigger" : "invoke",
 
         // #### Configuration
         // config items make immutable attributes available, or provide sane defaults
