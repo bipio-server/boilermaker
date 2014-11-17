@@ -98,9 +98,12 @@
         // __Description__ (_string_) extended description
         "description":"Action Name does some great thing",
 
-        // __Trigger__ (_string_, default `false`) Action is a trigger which tracks and generates its own content.
-        // Actions marked as triggers are content generators for triggered bips
-        "trigger" : false,
+        // __Trigger__ (_string_, optional) one of `invoke|poll|realtime`. Where not `none`, this
+        // action is a trigger which tracks and generates its own content (via triggering bips).
+        // * `invoke` - (default) must be explicitly invoked
+        // * `poll` - should be periodically polled with system scheduler
+        // * `realtime` - self managed
+        "trigger" : "poll",
 
         // #### Configuration
         // config items make immutable attributes available, or provide sane defaults
