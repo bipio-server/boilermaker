@@ -106,7 +106,7 @@
         // should point to the authoritative documentation this action attempts to encapsulate.
         "provider_ref" : "http://example.org/docs/#action_name",
 
-        // __Trigger__ (_string_, optional) one of `invoke|poll|realtime`.
+        // __Trigger__ (_string_, optional) one of :
         // * `invoke` - (default) must be explicitly invoked
         // * `poll` - should be periodically polled with system scheduler
         // * `realtime` - self managed
@@ -123,7 +123,7 @@
             "properties": {
               // __Name__ (_object_) Property, keyed by name
               "rcpt_to" : {
-                // __Type__ (_string_) Property type, `string|text|object|array|number|boolean`
+                // __Type__ (_string_) Property type
                 "type" : "string",
                 // __Title__ (_string_) Short, human readable action label
                 "title" : "Email Address",
@@ -154,7 +154,7 @@
             "properties": {
               // __Name__ (_object_) Property, keyed by name
               "message_id" : {
-                // __Type__ (_string_) Property type, `string|text|object|array|number|boolean`
+                // __Type__ (_string_) Property type
                 "type" : "string",
                 // __Title__ (_string_) Short, human readable action label
                 "title" : "Message ID",
@@ -183,7 +183,7 @@
           "properties": {
             // __Name__ (_object_) Property, keyed by name
             "message_id" : {
-              // __Type__ (_string_) Property type, `string|text|object|array|number|boolean`
+              // __Type__ (_string_) Property type
               "type" : "string",
 
               // __Title__ (_string_) Short, human readable action label
