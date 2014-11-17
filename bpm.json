@@ -111,11 +111,10 @@
         "config" : {
             // __Properties__ (_object_, optional) JSON-Schema Properties Object
             "properties": {
-              {
+              // __Name__ (_object_) Property, keyed by name
+              "rcpt_to" : {
                 // __Type__ (_string_) Property type, `string|text|object|array|number|boolean`
                 "type" : "string",
-                // __Name__ (_string_) Human Readable Name
-                "name" : "rcpt_to",
                 // __Title__ (_string_) Short, human readable action label
                 "title" : "Email Address",
                 // __Description__ (_string_) extended description
@@ -143,11 +142,10 @@
         "imports" : {
             // __Properties__ (_object_, optional) JSON-Schema Properties Object
             "properties": {
-              {
+              // __Name__ (_object_) Property, keyed by name
+              "message_id" : {
                 // __Type__ (_string_) Property type, `string|text|object|array|number|boolean`
                 "type" : "string",
-                // __Name__ (_string_) property id
-                "name" : "message_id",
                 // __Title__ (_string_) Short, human readable action label
                 "title" : "Message ID",
                 // __Description__ (_string_) extended description
@@ -173,7 +171,7 @@
         "exports" : {
             // __Properties__ (_object_, optional) JSON-Schema Properties Object
             "properties": {
-              // __Name__ (_string_) property id
+              // __Name__ (_object_) Property, keyed by name
               "message_id" : {
                 // __Type__ (_string_) Property type, `string|text|object|array|number|boolean`
                 "type" : "string",
@@ -186,7 +184,7 @@
             }
         },
 
-        // #### Action Renderers
+        // #### Renderers
         // __Renderers__ (_object_, optional) RPC's implemented by this __Action__
         "renderers" : {
           // __Key__ (_object_) Renderer key, becomes the URI eg: `/rpc/channel/:channel_id/:action_rpc_name`
