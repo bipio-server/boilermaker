@@ -62,8 +62,16 @@
     // * `issuer_token` User must supply authentication tokens
     "strategy" : "oauth",
 
-    // __Passport Provider__ (_string_) when `strategy : oauth`, supply the name of the <a href="http://passportjs.org/">node-passport</a> strategy name here
-    "provider" : "google",
+    // __Passport__ (_object_, optional) when `strategy : oauth`, sets <a href="http://passportjs.org/">node-passport</a>
+    // strategy instantiation parameters
+    "passport" : {
+      // __Provider__ (_string_, optional, default pod name) strategy name
+      "provider" : "google",
+      // __Function__ (_string_, optional, default 'Strategy') strategy function name
+      "function" : "Strategy",
+    },
+
+    //supply the name of the <a href="http://passportjs.org/">node-passport</a> strategy name here
 
     // __Auth Map__ (_object_, optional) when `strategy : issuer_token`, `authMap` maps internal attributes to how it is described by the pod provider.
     // For example, HipChat needs an access token, so `authMap` contains `password : 'API Access Token'`.
