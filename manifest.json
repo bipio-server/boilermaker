@@ -1,7 +1,7 @@
 // (c) WoT.IO inc (2014)
 // ### About
 //        BipIO Pod Manifest Definition v0.1 (draft)
-// The `bpm.json` file describes how to assemble a Pod boilerplate programatically
+// The `manifest.json` file describes how to assemble a Pod boilerplate programatically
 // and is an authoritative schema from which different views can be surfaced.
 
 // ### General Config
@@ -67,8 +67,8 @@
     "passport" : {
       // __Provider__ (_string_, optional, default pod name) strategy name
       "provider" : "google",
-      // __Function__ (_string_, optional, default 'Strategy') strategy function name
-      "function" : "Strategy",
+      // __Strategy__ (_string_, optional, default 'Strategy') strategy function name
+      "strategy" : "Strategy",
     },
 
     //supply the name of the <a href="http://passportjs.org/">node-passport</a> strategy name here
@@ -115,7 +115,7 @@
 
         // __Reference Documentation__ (_string_) Provider Reference Documentation URL.
         // should point to the authoritative documentation this action attempts to encapsulate.
-        "provider_ref" : "http://example.org/docs/#action_name",
+        "doc_ref" : "http://example.org/docs/#action_name",
 
         // __Trigger__ (_string_, optional) one of :
         // * `invoke` - (default) must be explicitly invoked
