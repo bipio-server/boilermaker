@@ -334,11 +334,13 @@ strategy instantiation parameters</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-20">&#182;</a>
               </div>
-              <p><strong>Properties</strong> (<em>object</em>, optional) JSON-Schema Properties Object when <code>strategy</code> is <code>none</code>.
+              <p><strong>Properties</strong> (<em>object</em>, optional) JSON-Schema Properties Object when <code>strategy</code> is <strong>not</strong> <code>none</code>.
 Describes which authentication properties are minimally required by this pod for its rpc’s and actions
-can be invoked.</p>
-<p>For example, HipChat needs an access token, so <code>map</code> contains <code>password : &#39;API Access Token&#39;</code>.
-<strong>Note</strong> Its up to pods to implement this mapping</p>
+to be invoked.</p>
+<p>When <code>strategy</code> is <code>oauth</code>, properties should indicate the required oauth attributes
+When <code>strategy</code> is <code>issuer_token</code>, properties should be any of <code>username|password|key</code></p>
+<p>For example, HipChat needs an access token, so <code>properties</code> contains <code>password : &#39;API Access Token&#39;</code>.</p>
+<p><strong>Note</strong> Its up to pods to implement any auth properties mapping</p>
 
             </div>
             

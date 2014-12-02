@@ -57,6 +57,7 @@
   "auth" : {
 
     // __Strategy__ (_string_) one of :
+    //
     // * `none` (default) no authentication required
     // * `oauth` User must negotiate oAuth credentials
     // * `issuer_token` User must supply authentication tokens
@@ -71,12 +72,16 @@
       "strategy" : "Strategy",
     },
 
-    // __Properties__ (_object_, optional) JSON-Schema Properties Object when `strategy` is `none`.
+    // __Properties__ (_object_, optional) JSON-Schema Properties Object when `strategy` is **not** `none`.
     // Describes which authentication properties are minimally required by this pod for its rpc's and actions
-    // can be invoked.
+    // to be invoked.
     //
-    // For example, HipChat needs an access token, so `map` contains `password : 'API Access Token'`.
-    // __Note__ Its up to pods to implement this mapping
+    // When `strategy` is `oauth`, properties should indicate the required oauth attributes
+    // When `strategy` is `issuer_token`, properties should be any of `username|password|key`
+    //
+    // For example, HipChat needs an access token, so `properties` contains `password : 'API Access Token'`.
+    //
+    // __Note__ Its up to pods to implement any auth properties mapping
     "properties" : {
       // __Name__ (_object_) Property, keyed by name
       "username" : {
