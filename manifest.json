@@ -19,6 +19,9 @@
   // __Provider URL__ (_string_, optional) URL to service provider
   "url" : "Provider URL",
 
+  // __API Version__ (_string_) provider API version
+  "version" : "1",
+
   // __Track Duplicates__ (_boolean_, optional default `false`) Pod requires a de-duplication resource
   "trackDuplicates" : true,
 
