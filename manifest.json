@@ -136,7 +136,7 @@
         // should point to the authoritative documentation this action attempts to encapsulate.
         "doc_ref" : "http://example.org/docs/#action_name",
 
-        // __Trigger__ (_string_, optional) one of :
+        // __Trigger__ (_string_) one of :
         // * `invoke` - (default) must be explicitly invoked
         // * `poll` - should be periodically polled with system scheduler
         // * `realtime` - self managed
