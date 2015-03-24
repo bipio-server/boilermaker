@@ -25,6 +25,9 @@
   // __Track Duplicates__ (_boolean_, optional default `false`) Pod requires a de-duplication resource
   "trackDuplicates" : true,
 
+  // __Track Deltas__ (_boolean_, optional default `false`) Pod requires an object delta tracking resource
+  "trackDeltas" : true,
+
   // __Data Sources__ (_object_, optional) Model objects which should be bound to a DAO resource,
   // keyed by the name of the action.
   "dataSources" : {
