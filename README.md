@@ -3,6 +3,8 @@ Boilermaker
 
 Boilermaker makes it easy to create a Pod boilerplate for [BipIO](https://bip.io) and add new actions.
 
+@see https://bipio-server.github.io/boilermaker/docs/manifest.html
+
 ## License
 
 BipIO is free for non-commercial use - [GPLv3](http://www.gnu.org/copyleft/gpl.html)
